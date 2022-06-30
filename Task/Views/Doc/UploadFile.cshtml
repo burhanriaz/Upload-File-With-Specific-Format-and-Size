@@ -1,0 +1,44 @@
+﻿
+@model TaskTwo.Models.ViewModel.DocumentVM;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+
+<h2> Here Upload Files</h2>
+<form method="post" enctype="multipart/form-data" asp-action="UploadFile" asp-controller="Doc">
+   
+    <hr />
+      <div class="form-group">
+    <label class="text-danger col-md-4" >@ViewBag.Message</label>  
+            </div>
+    <div class="form-group">
+        <label class="col-md-2" asp-for="fileOne"> Upload First File</label>
+        <div class="col-md-10">
+            <input type="file" asp-for="fileOne" class="form-control" />
+            <span asp-validation-for="fileOne" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2" asp-for="fileTwo"> Upload Second File</label>
+        <div class="col-md-10">
+            <input type="file"  asp-for="fileTwo" class="form-control" />
+            <span asp-validation-for="fileTwo" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2" asp-for="fileThree">Upload Thired File</label>
+        <div class="col-md-10">
+            <input type="file"  asp-for="fileThree" class="form-control" />
+            <span asp-validation-for="fileThree" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-10 offset-md-2">
+            <input Value="Upload" name="Upload Files" type="submit" class="btn btn-success" />
+        </div>
+    </div>
+   
+</form>
+
+@section Scripts{
+<partial name="_ValidationScriptsPartial" />
+}
